@@ -15,7 +15,7 @@ class rekeningBank {
         double jumlah = 200000;
         saldo += jumlah;
         System.out.println("===========================================================");
-        System.out.printf("%s Mentransfer uang sebesar Rp.%f. Saldo sekarang : Rp.%f \n",namaPemilik,jumlah,saldo);
+        System.out.printf ("%s Mentransfer uang sebesar Rp.%f. Saldo sekarang : Rp.%f \n",namaPemilik,jumlah,saldo);
         System.out.println("===========================================================");
         System.out.println();
     }
@@ -25,13 +25,13 @@ class rekeningBank {
 
        if(saldo < jumlah){
            System.out.println("===========================================================");
-           System.out.printf("%s Menarik uang sebesar Rp.%f. Gagal (Saldo tidak mencukupi). Saldo sekarang : Rp.%f \n",namaPemilik,jumlah,saldo);
+           System.out.printf ("%s Menarik uang sebesar Rp.%f. Gagal (Saldo tidak mencukupi). Saldo sekarang : Rp.%f \n",namaPemilik,jumlah,saldo);
            System.out.println("===========================================================");
            System.out.println();
        }else {
            saldo -= jumlah;
            System.out.println("===========================================================");
-           System.out.printf("%s Menarik uang sebesar Rp.%f. Berhasil. Saldo sekarang : Rp.%f \n",namaPemilik,jumlah,saldo);
+           System.out.printf ("%s Menarik uang sebesar Rp.%f. Berhasil. Saldo sekarang : Rp.%f \n",namaPemilik,jumlah,saldo);
            System.out.println("===========================================================");
            System.out.println();
        }

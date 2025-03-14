@@ -1,4 +1,4 @@
-    class Hewan {
+class Hewan {
     String nama, jenis, suara;
 
     public void tampilkanInfo(){
@@ -8,7 +8,6 @@
         System.out.println("======================");
     }
 }
-
 public class codelab1_modul2 {
     public static void main(String[] args) {
         Hewan hewan1 = new Hewan();
@@ -20,7 +19,7 @@ public class codelab1_modul2 {
 
         hewan2.nama = "Anjing";
         hewan2.jenis = "Mamalia";
-        hewan2.suara = "Woof Wooff!!";
+        hewan2.suara = "Woof-Wooff!!";
 
         hewan1.tampilkanInfo();
         hewan2.tampilkanInfo();

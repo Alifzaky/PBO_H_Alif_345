@@ -1,3 +1,5 @@
+package Modul_2;
+
 class Hewan {
     String nama, jenis, suara;
 

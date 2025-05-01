@@ -1,3 +1,8 @@
+package com.praktikum.actions;
+
+import com.praktikum.users.Admin;
+import com.praktikum.users.Mahasiswa;
+
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
@@ -5,8 +10,8 @@ public class Main {
         Scanner input = new Scanner(System.in);
 
         System.out.println("Pilih Login : ");
-        System.out.println("1. Admin");
-        System.out.println("2. Mahasiswa");
+        System.out.println("1. com.praktikum.users.Admin");
+        System.out.println("2. com.praktikum.users.Mahasiswa");
         System.out.print("Input : ");
         role = input.nextInt();
         input.nextLine();

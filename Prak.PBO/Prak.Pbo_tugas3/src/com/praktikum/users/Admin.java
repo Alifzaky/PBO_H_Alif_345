@@ -1,3 +1,5 @@
+package com.praktikum.users;
+
 public class Admin extends User{
     private String username;
     private String password;

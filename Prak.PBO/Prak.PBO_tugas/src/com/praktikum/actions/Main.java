@@ -2,16 +2,18 @@ package com.praktikum.actions;
 
 import com.praktikum.users.Admin;
 import com.praktikum.users.Mahasiswa;
-
+import com.praktikum.users.User;
 import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        int role;
         Scanner input = new Scanner(System.in);
+        User user = null;
+        int role;
 
         System.out.println("Pilih Login : ");
-        System.out.println("1. com.praktikum.users.Admin");
-        System.out.println("2. com.praktikum.users.Mahasiswa");
+        System.out.println("1. Admin");
+        System.out.println("2. Mahasiswa");
         System.out.print("Input : ");
         role = input.nextInt();
         input.nextLine();
@@ -32,6 +34,11 @@ public class Main {
                 admin.setPassword(input.nextLine());
 
                 admin.login();
+                if ("Admin345".equals(admin.getNama()) && "Password345".equals(admin.getPassword())){
+                    user = admin;
+                    admin.displayAppMenu();
+                }
+
                 break;
             case 2:
                 System.out.println("Login mahasiswa");
@@ -42,6 +49,11 @@ public class Main {
 
                 Mahasiswa mahasiswa = new Mahasiswa(namaMahasiswa,passwordMahasiswa);
                 mahasiswa.login();
+
+                if ("Alif Zaky Nasywa Muhammad".equals(mahasiswa.getNama()) &&
+                        "202410370110345".equals(mahasiswa.getNim())) {
+                    mahasiswa.displayAppMenu();
+                }
                 break;
 
             default:

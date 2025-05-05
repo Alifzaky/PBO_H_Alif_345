@@ -1,6 +1,6 @@
 package com.praktikum.users;
 
-public class User {
+public abstract class User {
     private String nama;
     private String nim;
 
@@ -25,9 +25,9 @@ public class User {
         this.nim = nim;
     }
 
-    public void login() {
-        System.out.println("Login dari com.praktikum.users.User");
-    }
+    public abstract void login();
+
+    public abstract void displayAppMenu();
 
     public void displayInfo(){
         System.out.println("Nama      : " + nama);

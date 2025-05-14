@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class Mahasiswa extends User implements mahasiswaActions {
     public Mahasiswa(String nama, String nim){
+
         super(nama,nim);
     }
 
@@ -14,8 +15,9 @@ public class Mahasiswa extends User implements mahasiswaActions {
                 "202410370110345".equals(getNim())){
             System.out.println("Login com.praktikum.users.Mahasiswa berhasil");
             displayInfo();
+            displayAppMenu();
         }else {
-            System.out.println("Login com.praktikum.users.Mahasiswa gagal");
+            System.out.println("Login Mahasiswa gagal");
         }
     }
 
@@ -37,6 +39,7 @@ public class Mahasiswa extends User implements mahasiswaActions {
 
     @Override
     public void viewReportedItems(){
+
         System.out.println(">> Fitur lihat laporan belum tersedia <<");
     }
 

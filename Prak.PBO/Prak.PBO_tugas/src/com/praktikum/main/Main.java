@@ -1,8 +1,6 @@
-package com.praktikum.actions;
+package com.praktikum.main;
 
-import com.praktikum.users.Admin;
-import com.praktikum.users.Mahasiswa;
-import com.praktikum.users.User;
+import com.praktikum.users.*;
 import java.util.Scanner;
 
 public class Main {
@@ -34,10 +32,7 @@ public class Main {
                 admin.setPassword(input.nextLine());
 
                 admin.login();
-                if ("Admin345".equals(admin.getNama()) && "Password345".equals(admin.getPassword())){
-                    user = admin;
-                    admin.displayAppMenu();
-                }
+
 
                 break;
             case 2:
@@ -50,10 +45,7 @@ public class Main {
                 Mahasiswa mahasiswa = new Mahasiswa(namaMahasiswa,passwordMahasiswa);
                 mahasiswa.login();
 
-                if ("Alif Zaky Nasywa Muhammad".equals(mahasiswa.getNama()) &&
-                        "202410370110345".equals(mahasiswa.getNim())) {
-                    mahasiswa.displayAppMenu();
-                }
+
                 break;
 
             default:

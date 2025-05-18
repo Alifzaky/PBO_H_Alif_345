@@ -5,6 +5,7 @@ import java.util.Scanner;
 import java.util.InputMismatchException;
 
 public class Manajemen_Stok {
+
     public static void main(String[] args) {
         ArrayList<Barang> daftarBarang = new ArrayList<>();
         Scanner input = new Scanner(System.in);
@@ -21,7 +22,8 @@ public class Manajemen_Stok {
             System.out.println("1. Tambah data baru");
             System.out.println("2. Tampilkan data barang");
             System.out.println("3. Kurangi data barang");
-            System.out.println("4. Keluar");
+            System.out.println("4. Hapus data");
+            System.out.println("0. Keluar");
             System.out.println("Pilihan anda : ");
 
             try{
@@ -60,15 +62,15 @@ public class Manajemen_Stok {
                         }
 
                         System.out.println(" Pilih barang : ");
-                        for(int i = 0; i<daftarBarang.size(); i++){
-                            System.out.println(i + ". "+ daftarBarang.get(i).getNama() + "(Stok : " + daftarBarang.get(i).getStok() + " )");
+                        for(int i = 0; i < daftarBarang.size(); i++){
+                            System.out.println((i + 1)  + ". "+ daftarBarang.get(i).getNama() + "(Stok : " + daftarBarang.get(i).getStok() + " )");
                         }
                         try{
                             System.out.println("Masukkan nomor indeks barang : ");
                             int index = input.nextInt();
                             input.nextLine();
 
-                            Barang barangDipilih = daftarBarang.get(index);
+                            Barang barangDipilih = daftarBarang.get(index - 1);
 
                             System.out.println("Jumlah stok yang akan diambil : ");
                             int jumlah = input.nextInt();
@@ -89,6 +91,33 @@ public class Manajemen_Stok {
                             System.out.println(e.getMessage());
                         }
                         break;
+                    case 4:
+                        if (daftarBarang.isEmpty()){
+                            System.out.println("GAK BISA HAPUUSSSS");
+                            break;
+                        }
+                        System.out.println(" Daftar barang : ");
+                        for(int i = 0; i < daftarBarang.size(); i++){
+                            Barang barangDihapus = daftarBarang.get(i);
+                            System.out.println((i + 1)  + ". "+ daftarBarang.get(i).getNama() + "(Stok : " + daftarBarang.get(i).getStok() + " )");
+                        }
+                        try{
+                            System.out.println("Masukkan data yang ingin dihapus : ");
+                            int hapusData = input.nextInt();
+                            input.nextLine();
+
+                            if(hapusData < 0 || hapusData >= daftarBarang.size()){
+                                System.out.println("Input tidak valid");
+                            }else {
+                                Barang barangDihapus = daftarBarang.remove(hapusData -1);
+                                System.out.println("Barang " + barangDihapus.getNama()+" berhasil dihapus");
+                            }
+                        }catch(InputMismatchException e){
+                            System.out.println("Input tidak valid");
+                            input.nextLine();
+                        }
+                        break;
+
                     case 0:
                         System.out.println("TERIMAA KASIIIIIHHHH");
                         break;
@@ -103,4 +132,6 @@ public class Manajemen_Stok {
         }
         input.close();
     }
+
+
 }

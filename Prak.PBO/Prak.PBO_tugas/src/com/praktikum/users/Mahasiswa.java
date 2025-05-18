@@ -1,6 +1,10 @@
 package com.praktikum.users;
 
 import com.praktikum.actions.mahasiswaActions;
+import com.praktikum.Data.Item;
+import com.praktikum.main.Main;
+
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Mahasiswa extends User implements mahasiswaActions {
@@ -34,13 +38,22 @@ public class Mahasiswa extends User implements mahasiswaActions {
         System.out.println("Lokasi terakhir: ");
         String lokasi = input.nextLine();
 
+        Item newItem = new Item(namabarang,deskripsi,lokasi);
+        Main.reportedItems.add(newItem);
         System.out.println(">> Laporan berhasil dikirimkan. Terimakasih <<");
     }
 
     @Override
     public void viewReportedItems(){
-
-        System.out.println(">> Fitur lihat laporan belum tersedia <<");
+        if(Main.reportedItems.isEmpty()){
+            System.out.println("Tidak ada laporan barang hilanh");
+        }else{
+            for(Item it : Main.reportedItems){
+                if("Reported".equals(it.getStatus())){
+                    System.out.printf("%s - %s - %s \n", it.getNamaItem(),it.getDeskripsi(),it.getLokasi());
+                }
+            }
+        }
     }
 
     @Override

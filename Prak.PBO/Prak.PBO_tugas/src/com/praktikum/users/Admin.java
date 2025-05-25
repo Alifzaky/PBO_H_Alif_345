@@ -35,15 +35,6 @@ public class Admin extends User implements adminActions{
         this.password = password;
     }
 
-    @Override
-    public void login(){
-        if ("Admin345".equals(username) && "Password345".equals(password)) {
-            displayInfo();
-            displayAppMenu();
-        } else {
-            System.out.println("Login gagal! Username atau password salah");
-        }
-    }
 
     @Override
     public void manageItems(){
@@ -163,7 +154,9 @@ public class Admin extends User implements adminActions{
         int pilihan;
 
         do {
-            System.out.println("=== Menu Admin ===");
+            System.out.println("=== Selamat datang ===");
+            System.out.println("=== Login sebagai admin ===");
+            System.out.println("=== Menu admin ===");
             System.out.println("1. Kelola laporan barang.");
             System.out.println("2. Kelola data Mahasiswa.");
             System.out.println("0. Logout");

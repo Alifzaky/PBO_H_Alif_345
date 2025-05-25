@@ -13,17 +13,6 @@ public class Mahasiswa extends User implements mahasiswaActions {
         super(nama,nim);
     }
 
-    @Override
-    public void login(){
-        if("Alif Zaky Nasywa Muhammad".equals(getNama()) &&
-                "202410370110345".equals(getNim())){
-            System.out.println("Login com.praktikum.users.Mahasiswa berhasil");
-            displayInfo();
-            displayAppMenu();
-        }else {
-            System.out.println("Login Mahasiswa gagal");
-        }
-    }
 
     @Override
     public void reportItems(){
@@ -40,17 +29,18 @@ public class Mahasiswa extends User implements mahasiswaActions {
 
         Item newItem = new Item(namabarang,deskripsi,lokasi);
         Main.reportedItems.add(newItem);
-        System.out.println(">> Laporan berhasil dikirimkan. Terimakasih <<");
+        System.out.println(">> Laporan berhasil dikirimkan. Maturnuhunn :D <<");
     }
 
     @Override
     public void viewReportedItems(){
         if(Main.reportedItems.isEmpty()){
-            System.out.println("Tidak ada laporan barang hilanh");
+            System.out.println("Tidak ada laporan barang hilang");
         }else{
             for(Item it : Main.reportedItems){
-                if("Reported".equals(it.getStatus())){
-                    System.out.printf("%s - %s - %s \n", it.getNamaItem(),it.getDeskripsi(),it.getLokasi());
+                if              ("Reported".equals(it.getStatus())){
+                    System.out.println("==== nama ==== deksripsi ==== lokasi ====");
+                    System.out.printf("|||| %s |||| %s |||| %s \n", it.getNamaItem(),it.getDeskripsi(),it.getLokasi());
                 }
             }
         }
@@ -62,7 +52,9 @@ public class Mahasiswa extends User implements mahasiswaActions {
         int pilihan;
 
         do {
-            System.out.println("=== Menu Mahasiswa ===");
+            System.out.println("=== Selamat datang ===");
+            System.out.println("=== Login sebagai mahasiswa ===");
+            System.out.println("=== Menu mahasiswa ===");
             System.out.println("1. Laporkan barang hilang.");
             System.out.println("2. Lihat daftar laporan.");
             System.out.println("0. Logout");

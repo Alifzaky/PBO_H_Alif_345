@@ -25,7 +25,6 @@ public abstract class User {
         this.nim = nim;
     }
 
-    public abstract void login();
 
     public abstract void displayAppMenu();
 

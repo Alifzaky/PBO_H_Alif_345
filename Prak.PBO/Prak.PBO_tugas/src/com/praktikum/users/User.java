@@ -1,36 +1,46 @@
 package com.praktikum.users;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 public abstract class User {
-    private String nama;
-    private String nim;
+    protected StringProperty nama;
+    protected StringProperty nim;
 
-    public User(String nama, String nim){
-        this.nama = nama;
-        this.nim = nim;
+    public User(String nama, String nim) {
+        this.nama = new SimpleStringProperty(nama);
+        this.nim = new SimpleStringProperty(nim);
     }
 
-    public String getNama(){
+    public String getNama() {
+        return nama.get();
+    }
+
+    public void setNama(String nama) {
+        this.nama.set(nama);
+    }
+
+    public String getNim() {
+        return nim.get();
+    }
+
+    public void setNim(String nim) {
+        this.nim.set(nim);
+    }
+
+    public StringProperty namaProperty() {
         return nama;
     }
 
-    public void setNama(){
-        this.nama = nama;
-    }
-
-    public String getNim(){
+    public StringProperty nimProperty() {
         return nim;
-    }
-
-    public void setNim(String nim){
-        this.nim = nim;
     }
 
 
     public abstract void displayAppMenu();
 
-    public void displayInfo(){
+    public void displayInfo() {
         System.out.println("Nama      : " + nama);
-        System.out.println("NIM       : "+ nim);
+        System.out.println("NIM       : " + nim);
     }
 
 

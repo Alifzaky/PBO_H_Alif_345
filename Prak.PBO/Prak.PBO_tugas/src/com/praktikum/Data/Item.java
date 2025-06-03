@@ -1,35 +1,33 @@
 package com.praktikum.Data;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 public class Item {
-    private String namaItem;
-    private String deskripsi;
-    private String lokasi;
-    private String status;
+    private final StringProperty namaItem;
+    private final StringProperty deskripsi;
+    private final StringProperty lokasi;
+    private final StringProperty status;
 
-    public Item (String namaItem, String deksripsi, String lokasi){
-        this.namaItem = namaItem;
-        this.deskripsi = deksripsi;
-        this.lokasi = lokasi;
-        this.status = "Reported";
+    public Item(String namaItem, String deskripsi, String lokasi) {
+        this.namaItem = new SimpleStringProperty(namaItem);
+        this.deskripsi = new SimpleStringProperty(deskripsi);
+        this.lokasi = new SimpleStringProperty(lokasi);
+        this.status = new SimpleStringProperty("Reported");
     }
 
-    public String getNamaItem(){
-        return namaItem;
-    }
+    // Getter JavaFX-style
+    public StringProperty namaItemProperty() { return namaItem; }
+    public StringProperty deskripsiProperty() { return deskripsi; }
+    public StringProperty lokasiProperty() { return lokasi; }
+    public StringProperty statusProperty() { return status; }
 
-    public String getDeskripsi(){
-        return deskripsi;
-    }
+    // Getter normal (opsional)
+    public String getNamaItem() { return namaItem.get(); }
+    public String getDeskripsi() { return deskripsi.get(); }
+    public String getLokasi() { return lokasi.get(); }
+    public String getStatus() { return status.get(); }
 
-    public String getLokasi(){
-        return lokasi;
-    }
-
-    public String getStatus(){
-        return status;
-    }
-
-    public void setStatus(String status){
-        this.status = status;
-    }
+    // Setter
+    public void setStatus(String s) { status.set(s); }
 }
